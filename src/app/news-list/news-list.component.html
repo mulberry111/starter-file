@@ -5,7 +5,7 @@
   <div class="display_news">
     @for (article of newsArticles; track article) {
     <div class="article_card">
-      <img [src]="article.attributes.imageUrl" alt="" />
+     
       <div class="article_details">
         <span class="article_title">{{ article.attributes.title }}</span>
         <span class="article_author">By {{ article.attributes.author }}</span>

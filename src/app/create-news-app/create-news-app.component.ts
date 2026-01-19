@@ -21,8 +21,7 @@ export class CreateNewsAppComponent {
   newArticle: any = {
     title: '',
     content: '',
-    author: '',
-    imageUrl: '',
+    author: ''
   };
 
 
