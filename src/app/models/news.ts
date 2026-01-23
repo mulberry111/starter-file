@@ -5,5 +5,6 @@ export interface NewsArticle {
   author: string;
   createdAt?: Date; 
   updatedAt?: Date; 
+  documentId?: string;
 }
 

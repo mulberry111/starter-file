@@ -35,17 +35,16 @@ export class NewsDetailsComponent {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      const articleId = params['id'];
+      const articleId = params['documentId'];
       this.newsService.getNewsById(articleId).subscribe((latestNews) => {
-        this.articleDetails = latestNews.data.attributes;
-        console.log(this.articleDetails.imageUrl);
+        this.articleDetails = latestNews.data;
       });
     });
   }
 
   deleteNews() {
     this.route.params.subscribe((params) => {
-      const articleId = params['id'];
+      const articleId = params['documentId'];
       this.newsService.deleteNews(articleId).subscribe(() => {
         this.newsArticles = this.newsArticles.filter(
           (news: any) => news.id !== articleId
@@ -66,8 +65,13 @@ export class NewsDetailsComponent {
 
   editNews() {
     this.route.params.subscribe((params) => {
-      const articleId = params['id'];
-      this.newsService.updateNews(articleId, {data:this.articleDetails}).subscribe(() => {
+      const articleId = params['documentId'];
+      this.newsService.updateNews(articleId, {
+        data: {
+          title: this.articleDetails.title,
+          content: this.articleDetails.content
+        }
+      }).subscribe(() => {
         this.editModalOpen = false;
         this.toastr.success('Article Updated ');
       });

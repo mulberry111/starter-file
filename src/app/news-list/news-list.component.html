@@ -7,9 +7,9 @@
     <div class="article_card">
      
       <div class="article_details">
-        <span class="article_title">{{ article.attributes.title }}</span>
-        <span class="article_author">By {{ article.attributes.author }}</span>
-        <button class="readMore_btn" (click)="onReadMore(article.id)">
+        <span class="article_title">{{ article.title }}</span>
+        <span class="article_author">By {{ article.author }}</span>
+        <button class="readMore_btn" (click)="onReadMore(article.documentId)">
           Read More
         </button>
       </div>

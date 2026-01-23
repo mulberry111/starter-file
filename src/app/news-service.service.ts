@@ -46,23 +46,24 @@ export class NewsServiceService {
   }
 
 // Get a specific news article by ID
-  getNewsById(id: number): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;
-    
+  getNewsById(documentId: string): Observable<any> {
+    const url = `${this.apiUrl}/${documentId}`;
+    console.log("getting news by id:", url)
     return this.http.get<any>(url);
   }
 
   // Update an existing news article
-  updateNews(id:number, news: any): Observable<NewsArticle> {
-    const url = `${this.apiUrl}/${id}`;
+  updateNews(documentId:string, news: any): Observable<NewsArticle> {
+    console.log("updating news:", documentId, news);
+    const url = `${this.apiUrl}/${documentId}`;
     return this.http.put<any>(url, news, httpOptions);
   }
 
   // Delete a news article by ID
-  deleteNews(id: number): Observable<any> {
+  deleteNews(documentId: string): Observable<any> {
     // const url = `${this.apiUrl}/${id}`;
-    console.log(id)
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    console.log(documentId)
+    return this.http.delete(`${this.apiUrl}/${documentId}`);
   }
 }
 

@@ -44,8 +44,7 @@ export class CreateNewsAppComponent {
     if (
       this.isEmpty(this.newArticle.title) ||
       this.isEmpty(this.newArticle.content) ||
-      this.isEmpty(this.newArticle.author) ||
-      this.isEmpty(this.newArticle.imageUrl)
+      this.isEmpty(this.newArticle.author) 
     ) {
       this.toastr.warning(
         'Please fill in all required fields: Title, Content, and Author.'
@@ -58,7 +57,6 @@ export class CreateNewsAppComponent {
         content: this.newArticle.content,
         author: this.newArticle.author,
         // date: new Date(),
-        imageUrl: this.newArticle.imageUrl,
       };
       // console.log(article);
       this.isLoading = true;
@@ -67,7 +65,6 @@ export class CreateNewsAppComponent {
         this.newArticle.title = '';
         this.newArticle.content = '';
         this.newArticle.author = '';
-        this.newsArticles.imageUrl = '';
         this.isLoading = false;
         this.closeModal()
       });
