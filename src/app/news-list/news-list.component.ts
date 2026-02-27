@@ -5,11 +5,12 @@ import { ModalComponent } from '../modal/modal.component';
 import { NewsServiceService } from '../news-service.service';
 import { Router, RouterLink } from '@angular/router';
 import { CreateNewsAppComponent } from '../create-news-app/create-news-app.component';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-news-list',
   standalone: true,
-  imports: [FormsModule, RouterLink, ModalComponent, CreateNewsAppComponent],
+  imports: [FormsModule, RouterLink, ModalComponent, CreateNewsAppComponent, DatePipe],
   templateUrl: './news-list.component.html',
   styleUrl: './news-list.component.css'
 })
